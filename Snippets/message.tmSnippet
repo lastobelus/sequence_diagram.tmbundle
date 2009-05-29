@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>message(${1:id},${2:id},"\fB${2:label}\fP");$0</string>
+	<string>message(${1:id},${2:id},"${3:label}");$0</string>
 	<key>name</key>
 	<string>message</string>
 	<key>scope</key>
