@@ -102,7 +102,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.activation.sequence.pic</string>
+					<string>storage.activation.sequence.pic</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -133,7 +133,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>comment.sequence.pic</string>
+					<string>keyword.comment.sequence.pic</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -148,7 +148,7 @@
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>constant.comment.name.sequence.pic</string>
+					<string>variable.comment.name.sequence.pic</string>
 				</dict>
 				<key>5</key>
 				<dict>
@@ -253,7 +253,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.control.sequence.pic</string>
+					<string>keyword.control.sequence.pic</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -279,6 +279,20 @@
 			<string>^\s*(delete|object_constraint|begin_frame|end_frame|connect_to_comment)(.*?)(\));</string>
 			<key>name</key>
 			<string>meta.object.other.sequence.pic</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.keywords.pic</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(copy|up|ht|wid|move)\b</string>
+			<key>name</key>
+			<string>meta.language.keywords.pic</string>
 		</dict>
 		<dict>
 			<key>include</key>
