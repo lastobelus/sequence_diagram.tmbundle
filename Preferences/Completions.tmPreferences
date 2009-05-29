@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completions</string>
+	<key>scope</key>
+	<string>source.pic</string>
+	<key>settings</key>
+	<dict>
+		<key>completions</key>
+		<array>
+			<string>object</string>
+			<string>placeholder_object</string>
+			<string>actor</string>
+			<string>complete</string>
+			<string>message</string>
+			<string>return_message</string>
+			<string>create_message</string>
+			<string>destroy_message</string>
+			<string>active</string>
+			<string>inactive</string>
+			<string>delete</string>
+			<string>lifeline_constraint</string>
+			<string>lconstraint</string>
+			<string>lconstraint_below</string>
+			<string>object_constraint</string>
+			<string>step</string>
+			<string>async</string>
+			<string>sync</string>
+			<string>begin_frame</string>
+			<string>end_frame</string>
+			<string>comment</string>
+			<string>connect_to_comment</string>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>7E198D7B-1C42-43F9-ABA0-97A7BA3EBE99</string>
+</dict>
+</plist>
