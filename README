@@ -1,0 +1,17 @@
+TextMate bundle for writing Sequence Diagrams using pic
+
+Contains the sequence diagram macros from http://www.umlgraph.org/ in a template, with a few tweaks.
+
+Has a command for previewing the sequence diagram in Preview, and for saving it to pdf (requires pic2plot and epstopdf).
+
+pic2plot is contained in the umlgraph package at http://www.umlgraph.org/
+
+One way to get epstopdf on Mac is:
+sudo port install tetex
+
+To install bundle with git:
+
+  mkdir -p ~/Library/Application\ Support/TextMate/Bundles
+  cd ~/Library/Application\ Support/TextMate/Bundles
+  git clone git://github.com/lastobelus/sequence_diagram.tmbundle.git
+  osascript -e 'tell app "TextMate" to reload bundles'
