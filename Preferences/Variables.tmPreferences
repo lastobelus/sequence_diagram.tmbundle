@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Variables</string>
+	<key>scope</key>
+	<string>source.apache-config</string>
+	<key>settings</key>
+	<dict>
+		<key>shellVariables</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>TM_SEQ_FONT</string>
+				<key>value</key>
+				<string>Helvetica-Narrow</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>TM_SEQ_FONT_SIZE</string>
+				<key>value</key>
+				<string>0.016</string>
+			</dict>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>CFD0B0DF-4E5C-409E-9AC7-1A2DBA9A0F27</string>
+</dict>
+</plist>

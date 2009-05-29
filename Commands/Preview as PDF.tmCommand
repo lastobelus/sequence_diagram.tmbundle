@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/sh
+TMPFILE=`mktemp -t sequence`.pdf || exit 1
+pic2plot -F$TM_SEQ_FONT --font-size $TM_SEQ_FONT_SIZE -Tps -- | epstopdf --filter &gt; $TMPFILE; open -a "Preview" $TMPFILE
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Preview as PDF</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.pic</string>
+	<key>uuid</key>
+	<string>94958EDE-759D-48B7-BC21-A2C8BBDC6E00</string>
+</dict>
+</plist>

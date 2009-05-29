@@ -1,0 +1,20 @@
+.PS
+
+copy "sequence.pic";
+#movewid=1
+#boxwid=1;
+
+actor(U,"\fBUser\fP");
+object(OBJ,"\Object\fP");
+step();
+step();
+
+#begin
+message(U,OBJ,"User does something");
+active(OBJ);
+#end
+
+complete(U);
+complete(OBJ);
+
+.PE

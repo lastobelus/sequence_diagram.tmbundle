@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/bin/sh
+FILENAME=`basename -s.pic $TM_FILEPATH`.pdf
+pic2plot -F$TM_SEQ_FONT --font-size $TM_SEQ_FONT_SIZE -Tps -- | epstopdf --filter &gt; $FILENAME; open -a "Preview" $FILENAME
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>~@r</string>
+	<key>name</key>
+	<string>Save and Preview as PDF</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.pic</string>
+	<key>uuid</key>
+	<string>B3E8955D-CB86-4115-AAA3-E8B462660DB9</string>
+</dict>
+</plist>
