@@ -53,6 +53,10 @@
 					<key>include</key>
 					<string>#strings</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#arguments</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -63,7 +67,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.object.constraints.sequence.pic</string>
+					<string>support.function.object.constraints.sequence.pic</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -121,7 +125,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(active|inactive|complete)(\()(\w+)(\));</string>
+			<string>\b(active|inactive|complete|delete)(\()(\w+)(\));</string>
 			<key>name</key>
 			<string>meta.object.activation.sequence.pic</string>
 		</dict>
@@ -133,7 +137,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.comment.sequence.pic</string>
+					<string>support.function.comment.sequence.pic</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -189,7 +193,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.message.sequence.pic</string>
+					<string>support.function.message.sequence.pic</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -253,7 +257,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.sequence.pic</string>
+					<string>support.function.control.sequence.pic</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -262,9 +266,55 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*(step|async|sync)(\(\));</string>
+			<string>^\s*(step|async|sync|divider_line)(\(\));</string>
 			<key>name</key>
 			<string>meta.control.sequence.pic</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\b(begin_frame|end_frame)(\()(\w+),(\w+)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.message.sequence.pic</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.sequence.pic</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.object.sequence.pic</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>variable.frame.name.sequence.pic</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\));</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.sequence.pic</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.frame.sequence.pic</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#strings</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -272,13 +322,55 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.sequence.macro</string>
+					<string>support.function.other.sequence.macro</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*(delete|object_constraint|begin_frame|end_frame|connect_to_comment)(.*?)(\));</string>
+			<string>^\s*(object_constraint|begin_frame|end_frame|connect_to_comment)(.*?)(\));</string>
 			<key>name</key>
 			<string>meta.object.other.sequence.pic</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.pic</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(for|do|if|then|else)\b</string>
+			<key>name</key>
+			<string>meta.language.keywords.control.pic</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.verbs.pic</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(copy|move|line|arrow|circle|box)\b</string>
+			<key>name</key>
+			<string>meta.language.keywords.verbs.pic</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.position.pic</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(up|down|left|right|from|to|at|with)\b</string>
+			<key>name</key>
+			<string>meta.language.keywords.position.pic</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -290,17 +382,83 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(copy|up|ht|wid|move)\b</string>
+			<string>\b(start|end|ht|wid|movewid|moveht|boxwid|boxht|awid|invisible|invis|dashed|fill|ljust|rjust)\b</string>
 			<key>name</key>
 			<string>meta.language.keywords.pic</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.keywords.coordinates.pic</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(s|e|w|n|se|ne|sw|nw|x|y)\b</string>
+			<key>name</key>
+			<string>meta.language.keywords.coordinates.pic</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.definition.pic</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.definition.object.pic</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(define|object)\b (\w+)</string>
+			<key>name</key>
+			<string>meta.language.definition.pic</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.special.constants.pic</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(Here|last)\b</string>
+			<key>name</key>
+			<string>meta.language.special.constants.pic</string>
 		</dict>
 		<dict>
 			<key>include</key>
 			<string>#strings</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#arguments</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>arguments</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.argument.positional.pic</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;!\\)(\$\d+)</string>
+			<key>name</key>
+			<string>meta.language.argument.positional.pic</string>
+		</dict>
 		<key>strings</key>
 		<dict>
 			<key>begin</key>
@@ -316,6 +474,10 @@
 					<string>\\f(B|I|P)</string>
 					<key>name</key>
 					<string>meta.preprocessor.font.command.pic</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#arguments</string>
 				</dict>
 			</array>
 		</dict>

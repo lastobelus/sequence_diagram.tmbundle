@@ -38,6 +38,8 @@ comment_default_wid=1;
 # Comment dash size
 comment_dash=0.02
 
+left_side = Here.x
+right_side = Here.x
 # Create a new object(name,label)
 define object {
 	$1: box fill 0.5 $2; move;
@@ -53,6 +55,7 @@ define object {
 	# > 1: nested : draw nested swimlane
 	active_$1 = 0;
 	lifestart_$1 = $1.s.y;
+	right_side = $1.x + movewid/2
 }
 
 # Create a new external actor(name,label)
@@ -69,6 +72,7 @@ define actor {
 	move right;
 	active_$1 = 0;
 	lifestart_$1 = $1.s.y - .05;
+	right_side = $1.x + movewid/2
 }
 
 # Create a new placeholder object(name)
@@ -79,6 +83,7 @@ define placeholder_object {
 	move right;
 	active_$1 = 0;
 	lifestart_$1 = $1.s.y;
+	right_side = $1.x + movewid/2
 }
 
 define pobject {
@@ -405,4 +410,10 @@ define connect_to_comment {
 	}
 	# restore Here.y
 	move to ($1.x, old_y)
+}
+
+define divider_line {
+	step();
+	line from (left_side, Here.y) to (right_side, Here.y) dashed
+	step();
 }
