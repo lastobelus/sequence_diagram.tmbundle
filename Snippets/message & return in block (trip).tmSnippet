@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>#begin
+	message(${1:id},${2:id},"${3:label}");
+	return_message($2,$1,"${4:label}");
+	$0
+#end</string>
+	<key>name</key>
+	<string>message &amp; return in block (trip)</string>
+	<key>scope</key>
+	<string>source.pic</string>
+	<key>tabTrigger</key>
+	<string>trip</string>
+	<key>uuid</key>
+	<string>F768911A-9408-4680-9937-46F4B634A5C0</string>
+</dict>
+</plist>

@@ -3,12 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>divider_line();$0</string>
+	<string>action(${1:id},${2:id},"${3:label}");$0</string>
 	<key>name</key>
-	<string>divider_line (div)</string>
+	<string>action (action)</string>
+	<key>scope</key>
+	<string>source.pic</string>
 	<key>tabTrigger</key>
-	<string>div</string>
+	<string>action</string>
 	<key>uuid</key>
-	<string>3BF55CA7-9F20-4B81-915E-04DA04AD8F91</string>
+	<string>84A221CA-64B3-4A48-A4F1-E01F6F6A7E36</string>
 </dict>
 </plist>

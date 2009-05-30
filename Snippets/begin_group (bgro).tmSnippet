@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>divider_line();$0</string>
+	<string>begin_group(${1:id});$0</string>
 	<key>name</key>
-	<string>divider_line (div)</string>
+	<string>begin_group (bgro)</string>
 	<key>tabTrigger</key>
-	<string>div</string>
+	<string>bro</string>
 	<key>uuid</key>
-	<string>3BF55CA7-9F20-4B81-915E-04DA04AD8F91</string>
+	<string>E8DA120B-057F-48BB-AD07-0E3C25967A7E</string>
 </dict>
 </plist>

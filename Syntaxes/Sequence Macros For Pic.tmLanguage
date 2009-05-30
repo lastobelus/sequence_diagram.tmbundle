@@ -36,7 +36,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(\))</string>
+			<string>(\));</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -81,7 +81,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(\))</string>
+			<string>(\));</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -131,7 +131,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(comment)(\()(\w+),(\w+),([^,]*),([^"]*)</string>
+			<string>\b(comment)(\()(\w+),(\w+)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -179,6 +179,60 @@
 			<string>meta.comment.sequence.pic</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>begin</key>
+					<string>,(?= *[^ "][^"]+[,\)])</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.sequence.pic.mary</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>,</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.sequence.pic.bob</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.comment.position.sequence.pic</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?&lt;=,)(?= *[^ "][^"]+["\)])</string>
+					<key>end</key>
+					<string>(?=["\)])</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.sequence.pic</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.comment.size.sequence.pic</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#strings</string>
