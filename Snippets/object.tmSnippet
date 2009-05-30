@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>object(${1:id},"\fB${2:label}\fP");$0</string>
 	<key>name</key>
-	<string>object</string>
+	<string>object (obj)</string>
 	<key>scope</key>
 	<string>source.pic</string>
 	<key>tabTrigger</key>

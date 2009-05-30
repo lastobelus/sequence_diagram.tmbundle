@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>return_message(${1:id},${2:id},"${3:label}");$0</string>
 	<key>name</key>
-	<string>return_message</string>
+	<string>return_message (rmes)</string>
 	<key>scope</key>
 	<string>source.pic</string>
 	<key>tabTrigger</key>

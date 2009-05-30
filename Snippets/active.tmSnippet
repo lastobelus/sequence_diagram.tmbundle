@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>active(${1:id});$0</string>
 	<key>name</key>
-	<string>active</string>
+	<string>active (ac)</string>
 	<key>scope</key>
 	<string>source.pic</string>
 	<key>tabTrigger</key>

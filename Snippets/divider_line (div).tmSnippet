@@ -3,14 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>complete(${1:id});$0</string>
+	<string>divider_line();$0</string>
 	<key>name</key>
-	<string>complete (com)</string>
-	<key>scope</key>
-	<string>source.pic</string>
-	<key>tabTrigger</key>
-	<string>com</string>
+	<string>divider_line (div)</string>
 	<key>uuid</key>
-	<string>3A1AAE1A-5996-440F-96C1-B60011D6AE99</string>
+	<string>3BF55CA7-9F20-4B81-915E-04DA04AD8F91</string>
 </dict>
 </plist>
