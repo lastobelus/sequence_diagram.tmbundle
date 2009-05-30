@@ -306,7 +306,7 @@ define step {
 
 # Switch to asynchronous messages
 define async {
-	if(arrowhead != 0) {
+	if(arrowhead != 0) then {
 		arrowhead = 0;
 		arrowwid = async_arrowwid;
 	}
@@ -314,7 +314,7 @@ define async {
 
 # Switch to synchronous messages
 define sync {
-	if(arrowhead != 1) {
+	if (arrowhead != 1) then {
 		arrowhead = 1;
 		arrowwid = sync_arrowwid;
 	}

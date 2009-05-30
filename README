@@ -1,8 +1,21 @@
-TextMate bundle for writing Sequence Diagrams using pic
+TextMate bundle for writing Sequence Diagrams using pic.
 
-Contains the sequence diagram macros from http://www.umlgraph.org/ in a template, with a few tweaks.
+Contains the sequence diagram macros from http://www.umlgraph.org/ in a template, with some additions & tweaks:
 
-Has a command for previewing the sequence diagram in Preview, and for saving it to pdf (requires pic2plot and epstopdf).
+	* objects have a gray fill. Just because this makes diagrams much easier for me to read.
+	* also turned off underline of object labels. If want to be more uml-compliant need to add two
+		object prototypes: one with underline & one without. For my purposes bold text in filled box
+		is just much easier to read.
+	* messages to inactive objects auto-activate them. There is currently no way to override this.
+	* added action message for message from <<actor>> -- start point is a small dark circle
+	* fixed arrowhead bug
+	* added divider_line (dashed line across diagram)
+	* added section_line (double line across diagram)
+	* added begin_group...end_group to draw a group box around objects
+	* added message_self to draw common way of showing messages to self in one call
+	* added title, which just prints text & does a step.** 
+
+The bundle has a command for previewing the sequence diagram in Preview, and for saving it to pdf (requires pic2plot and epstopdf).
 
 pic2plot is contained in the umlgraph package at http://www.umlgraph.org/
 
@@ -15,3 +28,5 @@ To install bundle with git:
   cd ~/Library/Application\ Support/TextMate/Bundles
   git clone git://github.com/lastobelus/sequence_diagram.tmbundle.git
   osascript -e 'tell app "TextMate" to reload bundles'
+
+**Can anyone tell me how to make font size changes in gnu pic2plot? The only way of many that I tried that worked was command "PTSIZE xx", which only works using groff -p, but groff -p totally mangles my documents in other ways.
