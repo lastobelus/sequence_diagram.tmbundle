@@ -38,8 +38,9 @@ comment_default_wid=1;
 # Comment dash size
 comment_dash=0.02
 
-left_side = Here.x
+left_side = Here.x - boxwid/2
 right_side = Here.x
+
 # Create a new object(name,label)
 define object {
 	$1: box fill 0.5 $2; move;
@@ -125,6 +126,9 @@ define message {
 	# Adjust so that lines and arrows do not fall into the
 	# active box.  Should be .5, but the arrow heads tend to
 	# overshoot.
+	if (active_$2 < 1) then {
+		active($2);
+	}
 	if ($1.x <= $2.x) then {
 		off_from = awid * .6;
 		off_to = -awid * .6;
@@ -144,7 +148,7 @@ define message {
         }
 
 	if ($1.x == $2.x) then {
-		arrow from ($1.x + off_from, Here.y) right then down .25 then left $3 ljust " " " " ;
+		arrow from ($1.x + off_from, Here.y) right then down 2*spacing/3 then to ($1.x + off_from + awid/2, Here.y - 2*spacing/3) $3 ljust " " " " ;
 	} else {
 		arrow from ($1.x + off_from, Here.y) to ($2.x + off_to, Here.y) $3 " ";
 	}
@@ -373,15 +377,15 @@ define comment {
 	boxwid=old_boxwid;
 
 	# draw the frame of the comment
-	line from       last box.nw \
-		to          last box.ne - (corner_fold, 0) \
-		then to last box.ne - (0, corner_fold) \
-		then to last box.se \
-		then to last box.sw \
-		then to last box.nw ;
-	line from       last box.ne - (corner_fold, 0) \
-		to          last box.ne - (corner_fold, corner_fold) \
-		then to last box.ne - (0, corner_fold) ;
+	line from  last box.nw \
+		to       last box.ne - (corner_fold, 0) \
+		then to  last box.ne - (0, corner_fold) \
+		then to  last box.se \
+		then to  last box.sw \
+		then to  last box.nw ;
+	line from  last box.ne - (corner_fold, 0) \
+		to       last box.ne - (corner_fold, corner_fold) \
+		then to  last box.ne - (0, corner_fold) ;
 
 	# restore Here.y
 	move to ($1.x, old_y)
@@ -417,3 +421,71 @@ define divider_line {
 	line from (left_side, Here.y) to (right_side, Here.y) dashed
 	step();
 }
+
+define section_line {
+	step();
+	line from (left_side, Here.y) to (right_side, Here.y)
+	move down spacing/5
+	line from (left_side, Here.y) to (right_side, Here.y)
+	step();
+}
+
+define title {
+	$1 ljust
+	step();
+}
+
+define action {
+	down;
+	move spacing;
+	if (active_$2 < 1) then {
+		active($2);
+	}
+	ACTION_CIRCLE: circle fill 1 rad 0.08 at ($1.x, Here.y)
+	if ($1.x <= $2.x) then {
+		off_from = awid * .6;
+		off_to = -awid * .6;
+	} else {
+		off_from = -awid * .6;
+		off_to = awid * .6;
+	}
+
+
+		# add half a box width for each level of nesting
+		if (active_$1 > 1) then {
+		        off_from = off_from + (active_$1 - 1) * awid/2;
+		}
+
+		# add half a box width for each level of nesting
+		if (active_$2 > 1) then {
+		        off_to = off_to + (active_$2 - 1) * awid/2;
+		}
+
+	arrow from ($1.x + off_from, ACTION_CIRCLE.y) to ($2.x + off_to, ACTION_CIRCLE.y) $3 " ";
+}
+
+# begin_group(name);
+define begin_group {
+	start_$1_x = Here.x - spacing/2
+	start_$1_y = Here.y + 1.5*spacing
+}
+
+# end_group(name,label_text);
+define end_group {
+	gwid = Here.x - start_$1_x - boxwid
+	ght = start_$1_y - Here.y + spacing
+	{ $1: box with .nw at (start_$1_x, start_$1_y) wid gwid ht ght rad 0.1 }
+	{ $2 at $1.n below }
+	# move where
+}
+
+define message_self {
+	message($1,$1,$2);
+	move up spacing/4
+	active($1);
+	step();
+	inactive($1);
+}
+
+# leave room for group
+step();
