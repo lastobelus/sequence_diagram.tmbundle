@@ -27,8 +27,8 @@ awid = .1;
 # Box height
 boxht = 0.3;
 # Commend folding
-cfwid=awid
-corner_fold=cfwid
+cfwid=awid;
+corner_fold=cfwid;
 # Comment distance
 define comment_default_move {up 0.25 right 0.25};
 # Comment height
@@ -36,11 +36,12 @@ comment_default_ht=0.5;
 # Comment width
 comment_default_wid=1;
 # Comment dash size
-comment_dash=0.02
+comment_dash=0.02;
 
-left_side = Here.x - boxwid/2
-right_side = Here.x
-
+left_side = Here.x - boxwid/2;
+right_side = Here.x;
+sync_arrowwid = arrowwid;
+async_arrowwid = arrowwid*2;
 # Create a new object(name,label)
 define object {
 	$1: box fill 0.5 $2; move;
@@ -305,14 +306,18 @@ define step {
 
 # Switch to asynchronous messages
 define async {
-	arrowhead = 0;
-	arrowwid = arrowwid * 2;
+	if(arrowhead != 0) {
+		arrowhead = 0;
+		arrowwid = async_arrowwid;
+	}
 }
 
 # Switch to synchronous messages
 define sync {
-	arrowhead = 1;
-	arrowwid = arrowwid / 2;
+	if(arrowhead != 1) {
+		arrowhead = 1;
+		arrowwid = sync_arrowwid;
+	}
 }
 
 # same as lifeline_constraint, but Text and empty string are exchanged.
