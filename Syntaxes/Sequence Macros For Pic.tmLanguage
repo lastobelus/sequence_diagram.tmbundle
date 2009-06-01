@@ -106,7 +106,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.activation.sequence.pic</string>
+					<string>support.function.activation.sequence.pic</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -125,7 +125,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(active|inactive|complete|delete)(\()(\w+)(\));</string>
+			<string>\b(active|inactive|complete|delete|pause|resume)(\()(\w+)(\));</string>
 			<key>name</key>
 			<string>meta.object.activation.sequence.pic</string>
 		</dict>
@@ -320,9 +320,49 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*(step|async|sync|divider_line|section_line)(\(\));</string>
+			<string>^\s*(step|async|sync|divider_line|section_line|elapsed_time)(\(\));</string>
 			<key>name</key>
 			<string>meta.control.sequence.pic</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\b(link)(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.object.definition.sequence.pic</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.sequence.pic</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\));</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.sequence.pic</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.control.labeled.sequence.pic</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#strings</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#arguments</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>

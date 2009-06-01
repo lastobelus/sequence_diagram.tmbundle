@@ -110,6 +110,7 @@ define extend_lifeline {
 	lifestart_$1 = Here.y;
 }
 
+
 # complete(name)
 # Complete the lifeline of the object with the given name
 define complete {
@@ -304,6 +305,21 @@ define step {
 	move spacing;
 }
 
+define step2 {
+	down;
+	move spacing*2;
+}
+
+define step3 {
+	down;
+	move spacing*3;
+}
+
+define step4 {
+	down;
+	move spacing*4;
+}
+
 # Switch to asynchronous messages
 define async {
 	if(arrowhead != 0) then {
@@ -494,3 +510,55 @@ define message_self {
 
 # leave room for group
 step();
+
+define elapsed_time {
+	move down spacing*1.5;
+	jag = 2*spacing/3
+	line from (left_side, Here.y) right movewid then right jag down jag then right jag*2 up jag*2 then down jag right jag then to (right_side, Here.y) dotted
+	move down spacing*1.5;
+}
+
+
+define pause {
+	step();
+	start_y = Here.y
+	if (active_$1 > 0) then {
+	#                 # draw the left edges of the boxes
+		move to ($1.x - awid/2, Here.y);
+		for level = 1 to active_$1 do {
+			line from (Here.x, lifestart_$1) to Here;
+			move right awid/2 up awid/8
+		}
+	# 
+	#                 # draw the right edge of the innermost box
+		move right awid/2 up awid/8
+		line from (Here.x, lifestart_$1) to Here;
+		lifestart_$1 = start_y - awid/8;
+		line from ($1.x - awid*1.5, start_y - awid/4) to (Here.x + awid, Here.y + awid/4) dotted
+	}
+}
+
+define resume {
+	if (active_$1 > 0) then {
+	#                 # draw the left edges of the boxes
+		line from ($1.x, lifestart_$1) to ($1.x, Here.y+dashwid) dashed;
+		start_y = Here.y
+		lifestart_$1 = start_y
+		move to ($1.x - awid/2, Here.y);
+		for level = 1 to active_$1 do {
+			line from (Here.x, lifestart_$1) to (Here.x, Here.y+0.01);
+			move right awid/2 up awid/8
+		}
+	# 
+	#                 # draw the right edge of the innermost box
+		move right awid/2 up awid/8
+		line from (Here.x, lifestart_$1) to Here;
+		line from ($1.x - awid*1.5, start_y - awid/4) to (Here.x + awid, Here.y + awid/4) dotted
+	}
+}
+
+define link {
+	step();
+	box with .nw at (left_side+movewid/8, Here.y) wid right_side - left_side - 3*movewid/8 fill 0.1 $1
+	line from last box.nw to (last box.nw.x + boxht/2, last box.nw.y - boxht/2) then to last box.sw
+}

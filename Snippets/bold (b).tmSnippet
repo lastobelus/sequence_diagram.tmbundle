@@ -3,14 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>inactive(${1:id});$0</string>
+	<string>"\fB${1:text}\fP"</string>
 	<key>name</key>
-	<string>inactive (inac)</string>
-	<key>scope</key>
-	<string>source.pic</string>
+	<string>bold (b)</string>
 	<key>tabTrigger</key>
-	<string>inac</string>
+	<string>b</string>
 	<key>uuid</key>
-	<string>24F423DE-59E6-4746-AC0E-7730BAAABC0A</string>
+	<string>29FE4C8D-61CF-460D-8D49-845BA84B478C</string>
 </dict>
 </plist>
