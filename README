@@ -31,7 +31,7 @@ Contains the sequence diagram macros from http://www.umlgraph.org/ in a template
 				
 The bundle has a command for previewing the sequence diagram in Preview, and for saving it to pdf (requires pic2plot and epstopdf).
 
-pic2plot is contained in the umlgraph package at http://www.umlgraph.org/
+pic2plot can be found at http://www.gnu.org/software/plotutils or installed on mac with the macports plotutils
 
 One way to get epstopdf on Mac is:
 sudo port install tetex
