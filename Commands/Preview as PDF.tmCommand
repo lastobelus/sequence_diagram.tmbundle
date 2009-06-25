@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/bin/sh
 TMPFILE=`mktemp -t sequence`.pdf || exit 1
-pic2plot -F$TM_SEQ_FONT --font-size $TM_SEQ_FONT_SIZE -Tps -- | epstopdf --filter &gt; $TMPFILE; open -a "Preview" $TMPFILE
+pic2plot -FHelvetica-Narrow --font-size=0.015 -Tps -- | epstopdf --filter &gt; $TMPFILE; open -a "Preview" $TMPFILE
 </string>
 	<key>input</key>
 	<string>document</string>

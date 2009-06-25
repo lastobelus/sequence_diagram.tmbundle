@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/bin/sh
 FILENAME=`basename -s.pic $TM_FILEPATH`.pdf
-pic2plot -F$TM_SEQ_FONT --font-size $TM_SEQ_FONT_SIZE -Tps -- | epstopdf --filter &gt; $FILENAME; open -a "Preview" $FILENAME
+pic2plot -FHelvetica-Narrow --font-size=0.015 -Tps -- | epstopdf --filter &gt; $FILENAME; open -a "Preview" $FILENAME
 </string>
 	<key>input</key>
 	<string>document</string>

@@ -5,11 +5,11 @@
 	<key>content</key>
 	<string>step3();$0</string>
 	<key>name</key>
-	<string>step3 (st3)</string>
+	<string>step3 (st)</string>
 	<key>scope</key>
 	<string>source.pic</string>
 	<key>tabTrigger</key>
-	<string>step</string>
+	<string>st</string>
 	<key>uuid</key>
 	<string>208EA48F-EFE9-4118-AFEC-67EA0EF38781</string>
 </dict>
